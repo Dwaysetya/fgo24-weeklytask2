@@ -43,11 +43,33 @@ const ambilData = async () => {
 
 ambilData();
 
-/*promise adalah tipe data dalam javascript yang mempresentasikan hasil dari Asyncronous
-yang akan di teruskan proses pengeksekusiannya
+/*
+
+PROMISE
+Promise adalah tipe objek di JavaScript yang merepresentasikan hasil dari operasi asynchronous 
+yang nantinya akan diteruskan ke proses eksekusi berikutnya.
+promise itu seperti janji di JavaScript, yang nunggu hasil asynchronous, 
+lalu setelah selesai, baru lanjut prosesnya.
+ada beberapa state di dalam PROMISE:
+- pending = menunggu
+- fullfield = Berhasil
+- rejected = Gagal
+
+THEN - CATCH
+
+ .then() akan jalan kalau Promise-nya berhasil (resolve), dan .catch() akan jalan kalau Promise-nya gagal (reject).
+Keduanya ngebantu banget buat ngatur alur program asynchronous supaya lebih rapi 
+dan gampang di-handle tanpa harus ribet pakai callback bertumpuk.
+
+ASYNC - AWAIT dan TRY-CATCH
+
+Async-await adalah cara dalam JavaScript untuk menulis kode asynchronous yang terlihat lebih rapi 
+dan mudah dibaca seperti kode synchronous (berurutan). Dengan async, sebuah fungsi otomatis mengembalikan promise, 
+dan await digunakan untuk menunggu hasil promise tersebut sebelum melanjutkan ke baris kode berikutnya.
+
+Sedangkan try-catch adalah cara untuk menangkap dan menangani error yang mungkin terjadi saat kode dijalankan. 
+Kode yang yang error dapat dimasukkan ke dalam blok try, dan jika benar-benar terjadi kesalahan, 
+program akan lompat ke blok catch untuk menanganinya, 
+sehingga aplikasi tetap bisa berjalan dengan lancar tanpa berhenti mendadak.
 */
 
-/* then - catch
- dan then- catch adalah metode yang akan menangani berhasil atau gagalnya proses promise di atas(Asyncronous)
-yang mengembalikan prommise . keduanya memungkinkan untuk manangani proses async
-*/
