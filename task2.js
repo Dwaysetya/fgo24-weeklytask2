@@ -1,9 +1,8 @@
 const getDataFromServer = (status, callback) => {
   if (status) {
-    // true
     setTimeout(() => {
       const products = ["product 1", "product 2", "product 3"];
-      callback(products);
+      callback(products, null);
     }, 3000);
     return;
   } else {
@@ -12,10 +11,10 @@ const getDataFromServer = (status, callback) => {
   }
 };
 
-const procesData = (asd, products) => {
+const procesData = (prod, err) => {
   try {
-    if (asd) {
-      asd.map((item) => {
+    if (prod) {
+      prod.map((item) => {
         console.log(item);
       });
     } else {
