@@ -9,39 +9,24 @@ const fetchData = (status) => {
     }
   });
 };
-
-fetchData(true)
-  .then(() => {
-    console.log("Data berhasil diambil");
+fetchData(false)
+  .then((result) => {
+    console.log(result);
   })
-  .catch(() => {
-    console.log("Gagal mengambil data");
+  .catch((error) => {
+    console.log(error);
   });
-
-// async - await
 
 async function getData() {
   try {
-    await fetchData(true).then(function () {
-      console.log("Data berhasil diambil");
-    });
+    const result = await fetchData(true);
+    console.log(result);
   } catch (error) {
-    console.log("Gagal mengambil data");
+    console.log(error);
   }
 }
 getData();
 
-// try - catch
-const ambilData = async () => {
-  try {
-    const process = await fetchData(true);
-    console.log(process);
-  } catch (error) {
-    console.log("Gagal mengambil data");
-  }
-};
-
-ambilData();
 
 /*
 
@@ -68,8 +53,6 @@ dan mudah dibaca seperti kode synchronous (berurutan). Dengan async, sebuah fung
 dan await digunakan untuk menunggu hasil promise tersebut sebelum melanjutkan ke baris kode berikutnya.
 
 Sedangkan try-catch adalah cara untuk menangkap dan menangani error yang mungkin terjadi saat kode dijalankan. 
-Kode yang yang error dapat dimasukkan ke dalam blok try, dan jika benar-benar terjadi kesalahan, 
-program akan lompat ke blok catch untuk menanganinya, 
-sehingga aplikasi tetap bisa berjalan dengan lancar tanpa berhenti mendadak.
+Kode yang error dapat dimasukkan ke dalam blok catch.
 */
 

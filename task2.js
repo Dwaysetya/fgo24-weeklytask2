@@ -1,28 +1,28 @@
 const getDataFromServer = (status, callback) => {
   if (status) {
     setTimeout(() => {
-      const products = ["product 1", "product 2", "product 3"];
+      const products = ["Product 1", "Product 2", "Product 3"];
       callback(products, null);
     }, 3000);
     return;
   } else {
-    const err = new Error("Failed to fatch data");
+    const err = new Error("Failed to fetch data");
     callback(null, err);
   }
 };
 
-const procesData = (prod, err) => {
+const processData = async (products, err) => {
   try {
-    if (prod) {
-      prod.map((item) => {
-        console.log(item);
+    if (products) {
+      products.forEach((element) => {
+        console.log(element);
       });
     } else {
-      throw Error;
+      throw err;
     }
   } catch (error) {
-    console.log("data error");
+    console.log("data error :", error.message);
   }
 };
 
-getDataFromServer(true, procesData);
+getDataFromServer(true, processData);
